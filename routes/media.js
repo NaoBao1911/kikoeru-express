@@ -7,8 +7,8 @@ const fs = require('fs');
 const path = require('path');
 const jschardet = require('jschardet');
 const { getTrackList } = require('../filesystem/utils');
-const { joinFragments } = require('./utils/url')
-const { isValidRequest } = require('./utils/validate')
+const { joinFragments } = require('./utils/url');
+const { isValidRequest } = require('./utils/validate');
 
 // GET (stream) a specific track from work folder
 router.get('/stream/:id/:index',
@@ -143,7 +143,7 @@ router.get('/check-lrc/:id/:index',
                   if (trackItem.title === lrcFileName && subtitleToFind === trackItem.subtitle) {
                       res.send({result: true, message:'找到歌词文件', hash: trackItem.hash});
                   }
-                })
+                });
               }
             })
             .catch(err => next(err));
