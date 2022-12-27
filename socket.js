@@ -94,6 +94,6 @@ const initSocket = (server) => {
       console.error(err);
     });
   });
-}
+};
 
 module.exports = initSocket;
