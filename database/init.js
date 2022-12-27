@@ -50,7 +50,7 @@ const initApp = async () => {
       await runMigrations();
       updateConfig();
     } catch (error) {
-      console.log('升级迁移过程中出错，请在GitHub issues中报告作者')
+      console.log('升级迁移过程中出错，请在GitHub issues中报告作者'),
       console.error(error);
     }
   } else if (!databaseExist) {
@@ -68,7 +68,7 @@ const initApp = async () => {
       }
     }
     try {
-      await skipMigrations()
+      await skipMigrations();
     } catch (err) {
       console.error(` ! 在构建数据库结构过程中出错: ${err.message}`);
       process.exit(1);
@@ -78,6 +78,6 @@ const initApp = async () => {
       updateConfig();
     }
   }
-}
+};
 
 module.exports = { initApp };
