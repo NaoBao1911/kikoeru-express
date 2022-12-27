@@ -39,8 +39,8 @@ module.exports = class KnexStorage {
           });
         }
 
-        throw err
-      })
+        throw err;
+      });
   }
 
   async logMigration (migrationName) {
