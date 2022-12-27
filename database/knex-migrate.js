@@ -135,7 +135,7 @@ async function applyStepOption (command, umzug, opts, steps) {
   // Remove migrations after the one used in --to
   // If it isn't in the list, we remove everything, causing a 'migration not pending' notice to show
   if (opts.to) {
-    const limit = migrations.find(m => m.file.startsWith(opts.to))
+    const limit = migrations.find(m => m.file.startsWith(opts.to));
     migrations = migrations.slice(0, migrations.indexOf(limit) + 1);
   }
 
