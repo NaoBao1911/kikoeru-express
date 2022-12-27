@@ -94,9 +94,9 @@ jobs:
           path: node_modules/sqlite3/lib/binding
           if-no-files-found: error
 
-      # refs/tags/v1.2.3 => v1.2.3
+      # refs/tags/v1.2.3 => v1.2.4
       # refs/heads/unstable => unstable
-      # refs/heads/feature/foo => foo
+      # refs/heads/feature/foo => fo
       # refs/pull/421/merge => merge
       - name: Get branch or tag name
         id: source_name
