@@ -6,7 +6,7 @@ const databaseExist = fs.existsSync(path.join(config.databaseFolderDir, 'db.sqli
 
 // knex 操作数据库
 const connEnv = process.env.KNEX_ENV || process.env.NODE_ENV || 'development';
-const conn = require('./knexfile')[connEnv]
+const conn = require('./knexfile')[connEnv];
 const knex = require('knex')(conn);
 
 /**
@@ -243,7 +243,7 @@ const removeWork = async (id, trxProvider) => {
       circle.circle_id,
       tags.map(tag => tag.tag_id),
       vas.map(va => va.va_id),
-    )
+    );
 };
 
 /**
@@ -256,7 +256,7 @@ const getWorksBy = ({id, field, username = ''} = {}) => {
   const ratingSubQuery = knex('t_review')
     .select(['t_review.work_id', 't_review.rating'])
     .join('t_work', 't_work.id', 't_review.work_id')
-    .where('t_review.user_name', username).as('userrate')
+    .where('t_review.user_name', username).as('userrate');
 
   switch (field) {
     case 'circle':
@@ -290,7 +290,7 @@ const getWorksByKeyWord = ({keyword, username = 'admin'} = {}) => {
   const ratingSubQuery = knex('t_review')
   .select(['t_review.work_id', 't_review.rating'])
   .join('t_work', 't_work.id', 't_review.work_id')
-  .where('t_review.user_name', username).as('userrate')
+  .where('t_review.user_name', username).as('userrate');
 
   const workid = keyword.match(/((R|r)(J|j))?(\d{6})/) ? keyword.match(/((R|r)(J|j))?(\d{6})/)[4] : '';
   if (workid) {
@@ -450,8 +450,8 @@ const getMetadata = ({field = 'circle', id} = {}) => {
   return knex(`t_${field}`)
     .select('*')
     .where('id', '=', id)
-    .first()
-}
+    .first();
+};
 
 module.exports = {
   knex, insertWorkMetadata, getWorkMetadata, removeWork, getWorksBy, getWorksByKeyWord, updateWorkMetadata,
