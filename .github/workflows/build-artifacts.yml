@@ -15,7 +15,7 @@ jobs:
       - name: Check out latest front end
         uses: actions/checkout@v2
         with:
-          repository: NaoBao1911/kikoeru-express
+          repository: NaoBao1911/kikoeru-quasar
           ref: unstable
 
       - name: Setup node
